@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,300;1,500;1,600&display=swap'); 
  body{
   font-family: 'Poppins', sans-serif;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  background-image: url('test.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+
 }
 
 nav, .nav-links{
@@ -19,20 +24,23 @@ nav{
   font-size: 1.5rem
 }
 a{
-  color: black;
+  color: peachpuff; 
   text-decoration: none;
   text-decoration: white;
+  text-shadow: 8px 5px 6px rgb(44, 43, 42); 
 }
 a:hover{
-  color: peachpuff;
+  color: rgb(255, 255, 255);
   text-decoration: underline;
   text-underline-offset: 1rem;
   text-decoration: rgb(181,181,181);
 }
 .logo{
+  font-weight: 600;
   font-size: 2rem;
-  color: #000000; 
+  color: peachpuff; 
   animation: bounce 2s ease infinite;
+  text-shadow: 8px 5px 6px rgb(44, 43, 42); 
 }
 .logo:hover{
   cursor: default
@@ -77,6 +85,7 @@ a:hover{
     flex-direction: column;
     justify-content: space-between;
     margin-right: 20px;
+    margin-top: 20px;
   }
   .container .box .title {
     white-space: auto wrap; 
@@ -167,7 +176,6 @@ a:hover{
  @media (max-width: 768px) {
   .container .box {
       width: 100%; 
-      margin: 0; 
   }
   
   .update_delete {

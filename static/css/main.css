@@ -2,6 +2,7 @@
 
 body{
   font-family: 'Poppins', sans-serif;
+
 }
 .container{
   display: flex;
@@ -24,15 +25,23 @@ nav{
   font-size: 1.5rem
 }
 a{
-  color: black;
+  color: peachpuff; 
   text-decoration: none;
   text-decoration: white;
+  text-shadow: 8px 5px 6px rgb(44, 43, 42); 
 }
 a:hover{
-  color: peachpuff;
+  color: rgb(255, 255, 255);
   text-decoration: underline;
   text-underline-offset: 1rem;
   text-decoration: rgb(181,181,181);
+}
+.logo{
+  font-weight: 600;
+  font-size: 2rem;
+  color: peachpuff; 
+  animation: bounce 2s ease infinite;
+  text-shadow: 8px 5px 6px rgb(44, 43, 42); 
 }
 .form-container {
     padding: 20px;
@@ -44,11 +53,6 @@ a:hover{
     flex-wrap: wrap;
     align-items: center;
     border-radius: 36px;
-}
-.logo{
-  font-size: 2rem;
-  color: #000000; 
-  animation: bounce 2s ease infinite;
 }
 .logo:hover{
   cursor: default

@@ -1,6 +1,6 @@
 # Social-Event-Planner
 
-Languages used {Python Flask, CSS, Html, Jinja, SQL}
+{Python, Flask, CSS, Html, Jinja, SQL, JSON, Powershell}
 
 BACKEND
 

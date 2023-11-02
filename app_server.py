@@ -21,7 +21,7 @@ class Board(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
     host = db.Column(db.String(20), nullable = False)
-    message = db.Column(db.String(80), unique = True)
+    message = db.Column(db.String(200), unique = True)
     location = db.Column(db.String(80))
     date_going = db.Column(db.String(80))
     dress_code = db.Column(db.String(80))
@@ -50,7 +50,6 @@ class Board(db.Model):
     
 
 POST_MESSAGE_COMMAND = "POST:"
-UPDATE_MESSAGE_COMMAND = "UPDATE: "
 HEADER = 64
 PORT = 9999
 FORMAT = 'utf-8'
