@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block body %}
+<body>
+    <nav id ="desktop-nav">
+        <h1 class="logo"> FiestaFollies &#128520;</h1>
+        <div>
+            <ul class ="nav-links">
+                <li><a href="/"> Party Up! </a></li>
+            </ul>
+        </div>
+    </nav>
+        <div class="container">
+            {% if message_to_update %}
+                <div class="form-container">
+                    <h1>Follies</h1>
+                    <form action="{{ url_for('update', id=message_to_update.id) }}" method="POST">
+                        <div>
+                            <label class="input__container" for="updateHostInput">Current Place:</label>
+                            <input id="updateHostInput" name="new_host" class="input" required placeholder="Enter Host Name" value="{{ message_to_update.host }}">
+                        </div>
+                        <div>
+                            <label class="input__container" for="updateMessageInput">New Message:</label>
+                            <textarea id="updateMessageInput" class="input" name="new_message" required>{{ message_to_update.message }}</textarea>
+                        </div>
+                        <div>
+                            <label class="input__container" for="updateLocationInput">New Location:</label>
+                            <textarea id="updateLocationInput" class="input" name="new_location" required>{{ message_to_update.location }}</textarea>
+                        </div>
+                        <div>
+                            <label class="input__container" for="updatedateInput">New Date:</label>
+                            <input type="date" id="updatedateInput" class="input" name="new_date" required value = "{{ message_to_update.date_going}}">
+                        <div>
+                            <label class="input__container" for="updatebudgetInput">New Budget:</label>
+                            <input type="number" id="updatebudgetInput" class="input" name="new_budget" required placeholder="Aren't we broke!?" value ="{{ message_to_update.budget}}">
+                        </div>
+                        <div>
+                            <label class="input__container" for="updatedressCodeInput">New Dress Code:</label>
+                            <input type="text" id="updatedressCodeInput" class="input" name="new_dress_code" placeholder="Casual, Formal, etc."value ="{{ message_to_update.dress_code}}" >
+                        </div>
+                        <button class="btn" type="submit">
+                            <span>Update</span>
+                        </button>
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+</body>
+{% endblock %}

@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,300;1,500;1,600&display=swap'); 
+ body{
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+}
+
+nav, .nav-links{
+  display: flex ;
+}
+nav{
+  justify-content: space-around;
+  align-items: center;
+  height: 17vh;
+}
+
+.nav-links{
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.5rem
+}
+a{
+  color: black;
+  text-decoration: none;
+  text-decoration: white;
+}
+a:hover{
+  color: peachpuff;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration: rgb(181,181,181);
+}
+.logo{
+  font-size: 2rem;
+  color: #000000; 
+  animation: bounce 2s ease infinite;
+}
+.logo:hover{
+  cursor: default
+}
+ 
+
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-20px);
+  }
+}
+
+
+.container {
+  display: flex;
+  justify-content: center; 
+  min-height: 100vh; 
+  flex-wrap: wrap;
+}
+.container .box {
+    max-height: 40em;
+    width: 19em;
+    height: 30em;
+    padding: 1rem;
+    margin: 1em;
+    background-color: rgba(240, 220, 197, 0.13);
+    border: 1px solid rgba(255, 228, 106, 0.222);
+    -webkit-backdrop-filter: blur(80px);
+    backdrop-filter: blur(20px);
+    border-radius: .7rem;
+    transition: all ease .3s;
+    border-color: #000000;
+}
+
+  .container .box {
+    overflow-x: auto;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 20px;
+  }
+  .container .box .title {
+    white-space: auto wrap; 
+    overflow: visible; 
+    text-overflow: ellipsis; 
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: .1em
+  }
+  
+  .container .box div strong {
+
+    display: block;
+    margin-bottom: .5rem;
+  }
+  
+  .container .box div p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    scroll-snap-align: start;
+    margin-bottom: 3px;
+    font-size: .9em;
+    font-weight: 300;
+    letter-spacing: .1em;
+    white-space: auto wrap; 
+    overflow-x: auto;
+  }
+  
+  .container .box div span {
+    scroll-snap-align: start;
+    font-size: .7rem;
+    font-weight: 300;
+  }
+  
+  .container .box div span:nth-child(3) {
+    font-weight: 500;
+    margin-right: .2rem;
+  }
+  
+  .container .box:hover {
+    box-shadow: 0px 0px 20px 1px #ffbb763f;
+    border: 1px solid rgba(255, 255, 255, 0.454);
+  }
+
+  .update_delete {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px; 
+}
+
+.btn {
+  width: 9em;
+  height: 3em;
+  border-radius: 30em;
+  font-size: 15px;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 6px 6px 12px #c5c5c5,
+              -6px -6px 12px #ffffff;
+  margin: 15px;
+ }
+ 
+ .btn::before {
+  content: '';
+  width: 0;
+  height: 3em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, peachpuff 0%, rgb(255, 225, 54) 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+ }
+ button:hover::before {
+  width: 9em;
+ }
+
+
+
+ @media (max-width: 768px) {
+  .container .box {
+      width: 100%; 
+      margin: 0; 
+  }
+  
+  .update_delete {
+      flex-direction: column; 
+  }
+  
+  .btn {
+      margin: 10px 0; 
+  }
+}

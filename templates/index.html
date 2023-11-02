@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+{% endblock %}
+
+{% block body %}
+<body>
+    <nav id ="desktop-nav">
+        <h1 class="logo"> FiestaFollies &#128520;</h1>
+        <div>
+            <ul class ="nav-links">
+                <li><a href="/all_messages"> Events Up! </a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="form-container">
+            <h1>Follies</h1>
+            <form action="/receive_message" method="POST">
+                <div>
+                    <label class="input__container" for="hostInput">Place:</label>
+                    <input id="hostInput" class="input" name="host" required placeholder="What's The Name?">
+                </div>
+                <div>
+                    <label class="input__container" for="messageInput">Message:</label>
+                    <textarea id="messageInput" class="input" name="message" required placeholder="Input Description"></textarea>
+                </div>
+                <div>
+                    <label class="input__container" for="locationInput">Location:</label>
+                    <input id="locationInput" class="input" name="location" required placeholder="Where we going?">
+                </div>
+                <div>
+                    <label class="input__container" for="dateInput">Date:</label>
+                    <input type="date" id="dateInput" class="input" name="date" required>
+                </div>
+                <div>
+                    <label class="input__container" for="budgetInput">Budget:</label>
+                    <input type="number" id="budgetInput" class="input" name="budget" required placeholder="Aren't we broke!?">
+                </div>
+                <div>
+                    <label class="input__container" for="dressCodeInput">Dress Code:</label>
+                    <input type="text" id="dressCodeInput" class="input" name="dressCode" required placeholder ="Casual, Formal, etc.">
+                </div>
+                <button class="btn" type="submit">
+                    <span>Post</span>
+                </button>
+            </form>
+        </div>
+    </div>
+    <div id="responseContainer">
+        {% if response %}
+            <h1 class="server-response">Party UP {{ response }} &#x1F60E;</h1>
+        {%else%}
+            <h1 class="server-response"> PUMP IT UP!! &#129300;</h1>
+        {% endif %}
+    </div>
+</body>
+{% endblock %}

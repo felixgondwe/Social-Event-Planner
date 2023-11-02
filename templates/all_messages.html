@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/message.css') }}">
+{% endblock %}
+
+{% block body %}
+<body>
+    <nav id ="desktop-nav">
+      {%if data %}
+          <h1 class="logo"> FiestaFollies Events &#128127; </h1>
+      {%else%}
+          <h1 class="logo">  FiestaFollies &#129296; </h1>
+      {% endif %}
+      <div>
+          <ul class ="nav-links">
+              <li><a href="/"> Party Up! </a></li>
+          </ul>
+      </div>
+    </nav>
+
+  <div class="container">
+          {% for info in data %}
+            <div class="box">
+                  <span class="title">{{ info.host }}</span>
+                  <strong>{{info.budget}} &#129297;</strong>
+                  <div>
+                      <strong>On: {{info.date_going}}</strong>
+                      <p>Location: {{info.location}} </p>
+                      <p>Wear: {{info.dress_code}}</p>
+                      <p>Details: {{info.message}} </p>
+                  </div>
+                  <form method="post" action="{{ url_for('vote', id=info.id) }}">
+                      <div class="vote-buttons">
+                          <button class="btn" type="submit" name="vote" value="yes">
+                              <p>Yes ({{ info.yes_count }})</p>
+                            <button class="btn" type="submit" name="vote" value="no">
+                              <p>No ({{ info.no_count }})</p>
+                            </button>
+                      </div>
+                  </form>
+                  <div class="update_delete" >
+                      <a href="{{ url_for('update', id=info.id) }}" class="button">Update</a>
+                      <a href="{{ url_for('delete', id=info.id) }}" class="button">Delete</a>
+                  </div>
+              </div>
+          {% endfor %}
+  </div>
+</form>
+
+    
+</div>
+</body>
+{% endblock %}
