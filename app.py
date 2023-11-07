@@ -92,9 +92,10 @@ def update(id):
             new_location = request.form.get('new_location')
             new_date = request.form.get('new_date')
             new_budget = request.form.get('new_budget')
-            new_dress_code = request.form.get('new_dressCode')
+            new_dress_code = request.form.get('new_dress_code')
             update_id = id
             update_command = f"UPDATE: ,{update_id},{new_message},{new_host},{new_location},{new_date},{new_budget},{new_dress_code}".encode(FORMAT)
+
             msg_length_send = str(len(update_command )).encode(FORMAT)
             msg_length_send += b' ' * (HEADER - len(msg_length_send))
             socket_client.send(msg_length_send)

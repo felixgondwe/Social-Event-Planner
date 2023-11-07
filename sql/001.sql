@@ -1,2 +1,2 @@
-Delete from board where id > 3; 
+DROP TABLE board;
 
