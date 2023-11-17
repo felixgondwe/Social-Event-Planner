@@ -9,6 +9,7 @@ In the Flask-SQLAlchemy framework, these models are instances of the db.Model cl
 """
 
 
+# add type hints 
 
 from flask_sqlalchemy import SQLAlchemy
 from datetime import date
@@ -30,6 +31,7 @@ class Event(db.Model):
     date_posted = db.Column(db.Date, default=date.today)
 
     def Eventdb_dict(self):
+        # check naming conventions here: https://pythonguides.com/python-naming-conventions/#:~:text=The%20most%20fundamental%20rules%20in%20Python%E2%80%99s%20naming%20conventions,3%20Names%20can%20contain%20letters%2C%20numbers%2C%20and%20underscores.
         return {
             'id': self.id,
             'host': self.host,

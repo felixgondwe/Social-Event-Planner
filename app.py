@@ -6,6 +6,8 @@ import datetime
 import socket
 import json
 
+#TODO: use ENUMS to store constant data i:e you can import these constants in places you want to use them
+#TODO: It makes it easier to keep things in one place and avoid hard coding values as much as possible, makes it hard to debug otherwise
 FORMAT = "utf-8"
 HEADER = 64
 socket_server_IP = "192.168.1.236"

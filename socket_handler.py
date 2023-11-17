@@ -14,7 +14,7 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)#AF_INET address famil
 server.bind(ADDR)
 
 
-     
+# TODO: add type hints      
 
 def handle_client(conn, addr,db_manager,app):
     

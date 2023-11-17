@@ -1,3 +1,4 @@
+# TODO: Add diagrams here showing the system design for the project
 # Social-Event-Planner
 
 {Python, Flask, CSS, Html, Jinja, SQL, JSON, Powershell}
