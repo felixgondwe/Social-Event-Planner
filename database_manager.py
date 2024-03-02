@@ -1,16 +1,3 @@
-"""
-
-A persistence layer is the layer within an application that interacts with the database
-
-The idea of the persistence layer is to encapsulate databases access routines. 
-This allows applications to work with a set of objects (Data Objects) that read and save their state to a database; 
-therefore applications do not need to have it in their source code SQL statements
-
-
-also called the storage or data access layer, the persistance 
-layer is a centralized location that receives all data calls and provides access to the persistent storage of an application
-
-"""
 
 
 from model import Event, db

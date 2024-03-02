@@ -2,14 +2,34 @@
 
 body{
   font-family: 'Poppins', sans-serif;
-
+  background-image: url(istockphoto-497317250-170667a.webp);
+  background-size:auto;
+  background-position: center;
+  height: 100vh;
 }
-.container{
+
+.container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+ background-image: url('young-party-cheerful-people-showered-confetti-club-31137048.webp');
+  height: 100vh; /* Set the height to the viewport height for a fullscreen effect */
 }
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px); /* Adjust the blur radius as needed */
+}
+
+
+
 nav, .nav-links{
   display: flex ;
 }
@@ -24,7 +44,7 @@ nav{
   list-style: none;
   font-size: 1.5rem
 }
-a{
+a,h1{
   color: peachpuff; 
   text-decoration: none;
   text-decoration: white;
@@ -44,6 +64,7 @@ a:hover{
   text-shadow: 8px 5px 6px rgb(44, 43, 42); 
 }
 .form-container {
+    z-index: 4;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
@@ -92,7 +113,7 @@ a:hover{
   z-index: 2;
   font-size: 12px;
   letter-spacing: 5px;
-  color: #000000;
+  color: #ffffff;
   text-shadow: 0 0 4px rgb(240, 240, 240);    
 }
 
@@ -107,6 +128,7 @@ a:hover{
   padding: 5px;
   transition: .5s linear;
   letter-spacing: 1px;
+  z-index: 4;
 }
 .input:focus {
   border: 2px solid peachpuff;
@@ -156,17 +178,18 @@ a:hover{
 .server-response {
   display: flex;
   justify-content: center;
-  font-size: 16px;
+  font-size: 30px;
   font-weight: 500;
   text-transform: uppercase;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
   
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   
   .form-container {
-      width: 100%;
+    width: 100%; 
+    height: 100%;
   }
   .input__container {
       font-size: 14px;
@@ -175,21 +198,20 @@ a:hover{
       max-width: 100%;
   }
   h3 {
-      font-size: 24px;
+      font-size: 12px;
   }
   .server-response {
-      font-size: 14px;
+      font-size: 20px;
   }
   .container .box {
-    width: 100%; 
+    width: 70%; 
     margin: 0; 
   }
 
   .update_delete {
-    flex-direction: column; 
+    flex-direction:column; 
   }
-
   .btn {
-    margin: 10px 0; 
+    margin: 30px 40px; 
   }
 }

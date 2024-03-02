@@ -11,7 +11,7 @@ import json
 FORMAT = "utf-8"
 HEADER = 64
 socket_server_IP = "192.168.1.236"
-socket_server_PORT = 9999
+socket_server_PORT = 8888
 POST_MESSAGE = "POST: "
 UPDATE_MESSAGE = "UPDATE: "
 

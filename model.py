@@ -1,13 +1,3 @@
-"""
-SQLAlchemy model: Creation of my database table
-Represent the structure and schema of data that my application will interact with 
-in this case we are interacting with the Model Event
-
-
-In the Flask-SQLAlchemy framework, these models are instances of the db.Model class.
-
-"""
-
 
 # add type hints 
 
